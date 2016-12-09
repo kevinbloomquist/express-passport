@@ -24,8 +24,14 @@ app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' }));
 app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash()); 
-
+// Best practice: put this at top of page with other requires
 require('./config/passport')(passport);
+
+
+  app.use(function (req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+  });
 
 var routes = require('./config/routes');
 app.use(routes);

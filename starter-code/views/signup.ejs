@@ -1,4 +1,10 @@
 <% include ./partials/header.ejs %>
+
+<% if (message) {%>
+    <div class="alert alert-danger"><%= message %></div>
+    <%}%>
+
+
 <h2>Signup</h2>
 
 <form method="post" action="/signup">
