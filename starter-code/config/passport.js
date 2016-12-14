@@ -51,7 +51,7 @@ module.exports = function(passport){
 				return callback(null,false,req.flash ('loginMessage','No user found with that email'));
 			}
 			if(!user.validPassword(password)){
-				return callback (null,false,req.flash('liginMessage','Oops! Wrong password'));
+				return callback (null,false,req.flash('loginMessage','Oops! Wrong password'));
 			}
 			return callback(null,user);
 		});

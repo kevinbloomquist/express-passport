@@ -12,7 +12,7 @@ function postSignup(request, response) {
 var signupStrategy = passport.authenticate('local-signup',{
 	successRedirect: '/',
 	failureRedirect: '/signup',
-	falureFlash: true
+	failureFlash: true
 });
 return signupStrategy(request,response);
 }
@@ -30,7 +30,7 @@ var loginStrategy = passport.authenticate('local-login',{
 	failureRedirect: '/login',
 	falureFlash: true
 });
-return loginStrategy(request,response);
+return localStrategy(request,response);
 }
 
 // GET /logout
